@@ -10,7 +10,7 @@
 
 <script>
 // @ is an alias to /src
-import Artwork from '@/components/Artwork.vue'
+import Artwork from '@/components/ArtworkData.vue'
 import artworks from '../data/art-data.js'
 export default {
   name: 'ArtworkView',
