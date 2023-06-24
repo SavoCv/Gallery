@@ -26,6 +26,12 @@
 
 
 <style scoped>
+
+nav a.router-link-exact-active {
+  color: var(--light-green);
+  font-weight: bold;
+}
+
 nav{
     margin-left: 5%;
     margin-right: 5%;
@@ -56,6 +62,7 @@ li:hover{
 
 a, a:hover, a:active{
     text-decoration: none;
+    font-weight: bold;
     color: var(--darkest-green);
 }
 

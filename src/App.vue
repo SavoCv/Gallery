@@ -1,7 +1,11 @@
 <template>
-  <div>
+  <div class='page_container'>
     <Navigation></Navigation>
     <router-view/>
+    <footer>
+
+      © 2023, Ilija Obradović i Savo Cvijetić, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu.
+    </footer>
   </div>
 </template>
 
@@ -19,20 +23,30 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
 }
 
-nav {
-  padding: 30px;
+.page_container{
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  width: 100%;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+footer{
+  background-color: var(--dark-green);
+  color: var(--darkest-green);
+  margin-left: 5%;
+  margin-right: 5%;
+  min-height: 30px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  margin-top: auto;
 }
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
 
 <script>
