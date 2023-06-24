@@ -109,16 +109,13 @@ button{
 <script>
 
 export default {
-    name: 'Navigation'
-}
-
-function change_language(){
-    console.log("nesto");
-    console.log(this.$router.currentRoute);
-}
-
-function say(message) {
-  alert(message)
+    name: 'Navigation',
+    methods: {
+        change_language(){
+            console.log("nesto");
+            console.log(this.$router.currentRoute);
+        }
+    }
 }
 
 </script>
