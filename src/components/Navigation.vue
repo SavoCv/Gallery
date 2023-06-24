@@ -33,6 +33,7 @@ nav a.router-link-exact-active {
 }
 
 nav{
+<<<<<<< HEAD
     margin-left: 5%;
     margin-right: 5%;
     flex-wrap: wrap;
@@ -42,11 +43,21 @@ nav, ul{
     /* height: 80px; */
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+=======
+    /* margin-left: 5%;
+    margin-right: 5%; */
+}
+
+nav, ul{
+    height: 80px;
+    /* border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px; */
+>>>>>>> 17f25bd (Updated Artworks page.)
     display: flex;
     /*justify-content: space-between;*/
     align-items: center;
     list-style-type: none;
-    background-color: var(--dark-green);
+    background-color: var(--darkest-black);
 }
 
 ul{
@@ -112,13 +123,13 @@ export default {
     name: 'Navigation'
 }
 
-function change_language(){
-    console.log("nesto");
-    console.log(this.$router.currentRoute);
-}
+// function change_language(){
+//     console.log("nesto");
+//     console.log(this.$router.currentRoute);
+// }
 
-function say(message) {
-  alert(message)
-}
+// function say(message) {
+//   alert(message)
+// }
 
 </script>
