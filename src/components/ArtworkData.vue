@@ -5,13 +5,13 @@
         </div>
 
         <div :class="img_classes">
-            <img class="img img-fluid" :src="getImgUrl(artwork_info.src)" >
+            <a href="#"><img class="img img-fluid" :src="getImgUrl(artwork_info.src)" ></a>
         </div>
     </div>
     
     <div class="row art-row" v-else>
         <div :class="img_classes">
-            <img :src="getImgUrl(artwork_info.src)">
+            <a href="#"><img :src="getImgUrl(artwork_info.src)"></a>
         </div>
 
         <div :class="info_classes">
@@ -62,8 +62,27 @@ h2{
     margin-bottom: 5%;
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color:black; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
 img, span{
     justify-self: center;
+}
+
+img{
+    transition: transform .2s;
+}
+
+img:hover{
+     transform: scale(1.1);
 }
 </style>
 
@@ -87,7 +106,7 @@ img, span{
         data(){
             return {
                 info_classes: "col-sm-9 info",
-                img_classes: "col-sm-3 pt-5 pb-5 art fancy-border"
+                img_classes: "col-sm-3 pt-5 pb-5 art fancy-border hover-zoom"
             }
         }
     }
