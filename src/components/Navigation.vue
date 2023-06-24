@@ -1,19 +1,22 @@
 <template>
-    <nav class="navigation">
-        <div class="logo col-sm-1">
+    <nav class="navigation row align-items-center">
+        <div class="logo col-lg-1 col-sm-12">
             <img src="@/assets/logo.png" id="logo_img">
         </div>
-        <ul class="nav-pills navigation col-sm-5">
+        <ul class="nav-pills navigation col-lg-5">
+        <!-- <ul class="nav-pills navigation col-lg-5 col-sm-12"> -->
             <li class="nav-item"><router-link to="/" class="nav-link">Home</router-link></li>
             <li class="nav-item"><router-link to="/artworks" class="nav-link">Artworks</router-link></li>
             <li class="nav-item"><router-link to="/artists" class="nav-link">Artists</router-link></li>
             <li class="nav-item"><router-link to="/account" class="nav-link">My account</router-link></li>
             <li class="nav-item"><router-link to="/about" class="nav-link">About us</router-link></li>
         </ul>
-        <div class="title offset-2 col-sm-2">
+        <div class="title col-lg-4 justify-content-center">
+        <!-- <div class="title offset-lg-2 col-lg-2 col-sm-12 justify-content-center"> -->
             <h1><b>Gallery</b></h1>
         </div>
-         <div class="nav-item offset-1 col-sm-1" id="flag">
+        <div class="nav-item offset-lg-1 col-lg-1 justify-content-end" id="flag_div">
+        <!-- <div class="nav-item offset-lg-1 col-lg-1 col-sm-12 justify-content-end" id="flag_div"> -->
             <button @click="change_language()"> <!-- it's not working yet -->
                 <img src="@/assets/serbia_flag.png" id="flag">
             </button>
@@ -26,10 +29,11 @@
 nav{
     margin-left: 5%;
     margin-right: 5%;
+    flex-wrap: wrap;
 }
 
 nav, ul{
-    height: 80px;
+    /* height: 80px; */
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     display: flex;
@@ -55,8 +59,17 @@ a, a:hover, a:active{
     color: var(--darkest-green);
 }
 
-div{
+div, nav{
     display: flex;
+    padding: 5px;
+}
+
+.logo{
+    min-width: 80px;
+}
+
+.title{
+    text-align: center;
 }
 
 #logo_img{
@@ -68,10 +81,20 @@ div{
     width: 30px;
 }
 
+#flag_div{
+    padding-right: 15px;
+}
+
 button{
     border: none;
     padding: 0;
     background: transparent;
+}
+
+@media only screen and (max-width: 500px){
+    ul {
+        flex-direction: column;
+    }
 }
 
 </style>
