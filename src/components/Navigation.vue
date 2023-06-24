@@ -42,7 +42,7 @@ nav{
 
 
 nav, ul{
-    height: 80px;
+    /* height: 80px; */
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     display: flex;
@@ -87,12 +87,12 @@ div, nav{
 }
 
 #flag{
-    width: 30%;
+    width: 30px;
+    margin-right: 20px;
 }
 
 #flag_div{
-    
-    /* padding-right: 15px; */
+    padding: 10px;
 }
 
 button{
