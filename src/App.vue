@@ -22,7 +22,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("assets/imgs/wall.jpg");
-  background-size: 100%;
+  background-size: 100% 100%;
   background-attachment: fixed;
   text-align: center;
   color: #000000;

@@ -17,7 +17,7 @@
         </div>
         <div class="nav-item offset-lg-1 col-lg-1 justify-content-end" id="flag_div">
         <!-- <div class="nav-item offset-lg-1 col-lg-1 col-sm-12 justify-content-end" id="flag_div"> -->
-            <button @click="change_language()"> <!-- it's not working yet -->
+            <button @load="set_flag()" @click="change_language()"> <!-- it's not working yet -->
                 <img src="@/assets/serbia_flag.png" id="flag">
             </button>
          </div>
@@ -89,6 +89,11 @@ div, nav{
 #flag{
     width: 30px;
     margin-right: 20px;
+    transition: transform .2s;
+}
+
+#flag:hover{
+     transform: scale(1.5);
 }
 
 #flag_div{
@@ -113,11 +118,30 @@ button{
 
 export default {
     name: 'Navigation',
-    methods: {
+    methods:{
         change_language(){
-            console.log("nesto");
-            console.log(this.$router.currentRoute);
-        }
+            let t = localStorage.getItem("language")
+            if(t === "srb"){
+                localStorage.setItem("language", "uk")
+                document.getElementById("flag").setAttribute("src", require('@/assets/uk_flag.png'))    
+            }
+            else{
+                localStorage.setItem("language", "srb")
+                document.getElementById("flag").setAttribute("src", require('@/assets/serbia_flag.png'))
+            }
+            this.$router.go(this.$route)
+        },
+    },
+    mounted(){
+            if(!localStorage.getItem("language"))
+                localStorage.setItem("language", "srb")
+
+            let t = localStorage.getItem("language")
+            console.log(t)
+            if(t === "srb")
+                document.getElementById("flag").setAttribute("src", require('@/assets/serbia_flag.png'))
+            else
+                document.getElementById("flag").setAttribute("src", require('@/assets/uk_flag.png'))
     }
 }
 
