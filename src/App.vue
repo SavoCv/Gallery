@@ -3,7 +3,6 @@
     <Navigation></Navigation>
     <router-view/>
     <footer>
-
       © 2023, Ilija Obradović i Savo Cvijetić, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu.
     </footer>
   </div>
@@ -15,14 +14,18 @@
   --light-green: #9dc08b;
   --dark-green: #609966;
   --darkest-green: #40513b;
+  --darker-brown: rgba(0, 0, 0, 0.466);
 }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("assets/imgs/wall.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
   text-align: center;
-  color: #2c3e50;
+  color: #000000;
   display: flex;
 }
 
@@ -34,16 +37,16 @@
 }
 
 footer{
-  background-color: var(--dark-green);
-  color: var(--darkest-green);
-  margin-left: 5%;
-  margin-right: 5%;
+  background-color: black;
+  color: white;
+  /* margin-left: 5%;
+  margin-right: 5%; */
   min-height: 30px;
   margin-top: 10px;
   display: flex;
   justify-content: center;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
+  /* border-top-right-radius: 15px;
+  border-top-left-radius: 15px; */
   margin-top: auto;
 }
 

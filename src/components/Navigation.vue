@@ -33,20 +33,22 @@ nav a.router-link-exact-active {
 }
 
 nav{
-    margin-left: 5%;
-    margin-right: 5%;
+    /* margin-left: 5%;
+    margin-right: 5%; */
     flex-wrap: wrap;
+    background-color: rgb(0, 0, 0); 
+    color: white;
 }
 
+
 nav, ul{
-    /* height: 80px; */
+    height: 80px;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     display: flex;
     /*justify-content: space-between;*/
     align-items: center;
     list-style-type: none;
-    background-color: var(--dark-green);
 }
 
 ul{
@@ -63,12 +65,12 @@ li:hover{
 a, a:hover, a:active{
     text-decoration: none;
     font-weight: bold;
-    color: var(--darkest-green);
+    color: rgb(255, 255, 255);
 }
 
 div, nav{
     display: flex;
-    padding: 5px;
+    /* padding: 5px; */
 }
 
 .logo{
@@ -85,11 +87,12 @@ div, nav{
 }
 
 #flag{
-    width: 30px;
+    width: 30%;
 }
 
 #flag_div{
-    padding-right: 15px;
+    
+    /* padding-right: 15px; */
 }
 
 button{
