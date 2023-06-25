@@ -21,18 +21,28 @@ export default {
   data(){
     let lang = localStorage.getItem("language")
     if(!lang) lang = "srb";
-    artworks.map(a => a.srb)
+    
+    let ad = null;
+    let p = this.$route.path.split('/').splice[-1];
+    if(! p === "artworks")
+      ad = artworks.filter(a => {
+        return a.type === p;
+      })
 
-    if(lang === "srb"){
-        console.log(artworks.map(a => a.srb))
-        return {
-            artworks_data: artworks.map(a => a.srb)
-        }
+    if(lang === "srb"){  
+      ad = artworks.map(a => {
+            return  {...a.srb, src: a.src}
+      })  
     }
-    else
-        return {
-            artworks_data: artworks.map(a => a.eng)
-        }
+    else{
+      ad = artworks.map(a => {
+            return  {...a.eng, src: a.src}
+      })
+    }
+
+    return {
+      artworks_data: ad,
+    }
     
   }
 }
