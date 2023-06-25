@@ -30,6 +30,16 @@ const routes = [
     name: 'account',
     component: () => import(/*webpackChunkName: "Account" */ '../views/AccountView.vue')
   },
+  {
+    path: '/artworks/painting',
+    name: 'paintings',
+    component: () => import(/* webpackChunkName: "paintings" */ '../views/ArtworkView.vue')
+  },
+  {
+    path: '/artworks/sculpture',
+    name: 'sculptures',
+    component: () => import(/* webpackChunkName: "scluptures" */ '../views/ArtworkView.vue')
+  }
 ]
 
 const router = createRouter({

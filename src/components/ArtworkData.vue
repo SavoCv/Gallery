@@ -29,10 +29,10 @@ img{
     box-shadow: 3px 3px 5px;
 }
 
-.fancy-border {
+/* .fancy-border {
     border: 5px solid #1b1818;
     background: radial-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0.4));
-}
+} */
 
 .art{
     display: flex;
@@ -107,6 +107,16 @@ img:hover{
             return {
                 info_classes: "col-sm-9 info",
                 img_classes: "col-sm-3 pt-5 pb-5 art fancy-border hover-zoom"
+            }
+        },
+        mounted(){
+            let elems = document.getElementsByTagName("img")
+            for(let i = 0; i < elems.length; i++){
+                if(elems[i].height < elems[i].width){
+                    elems[i].style.height = "auto"
+                    elems[i].style.maxWidth = "120%"
+                    elems[i].style.maxHeight = "unset"
+                }
             }
         }
     }

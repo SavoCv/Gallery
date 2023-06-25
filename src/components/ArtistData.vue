@@ -1,9 +1,9 @@
 <template>
     <div class="row artist-row">
-        <div :class="[{'order-2':right}, 'col-sm-9']">
+        <div :class="[{'order-2':right}, 'col-sm-9', 'info']">
             <ArtistInfo :artist="artist"></ArtistInfo>
         </div>
-        <div :class="[{'order-1':right}, 'col-sm-3', 'pt-5', 'pb-5']">
+        <div :class="[{'order-1':right}, 'col-sm-3', 'pt-5', 'pb-5', 'artist']">
             <img :src="getImgUrl(artist.src)" class="img img-fluid">
         </div>
     </div>
