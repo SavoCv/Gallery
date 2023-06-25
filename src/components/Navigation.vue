@@ -88,7 +88,6 @@ div, nav{
 
 #flag{
     width: 30px;
-    margin-right: 20px;
     transition: transform .2s;
 }
 
@@ -104,6 +103,7 @@ button{
     border: none;
     padding: 0;
     background: transparent;
+    margin-right: 20px;
 }
 
 @media only screen and (max-width: 500px){
