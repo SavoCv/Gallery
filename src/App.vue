@@ -2,8 +2,11 @@
   <div class='page_container'>
     <Navigation></Navigation>
     <router-view/>
-    <footer>
+    <footer v-if="lang == 'srb'">
       © 2023, Ilija Obradović i Savo Cvijetić, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu.
+    </footer>
+    <footer v-if="lang == 'uk'">
+      © 2023, Ilija Obradović i Savo Cvijetić, University of Belgrade, School of Electrical Engineering, Software Enginerring Department.
     </footer>
   </div>
 </template>
@@ -57,6 +60,11 @@ import Navigation from '@/components/Navigation.vue'
 
 export default {
   name: 'App',
+  data(){
+    return {
+      'lang': localStorage.getItem('language'),
+    }
+  },
   components: {
     Navigation
   }
