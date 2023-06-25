@@ -1,13 +1,15 @@
 <template>
     <div>
         <div id="not-logged-in" v-if="username == ''">
-            <div class='row'>
+            <div class='row row-sized'>
                 <div class='col-sm-4 offset-sm-1'>
-                    <div>
-                        <h1 v-if="lang == 'srb'">Uloguj se</h1>
-                        <h1 v-if="lang == 'uk'">Log in</h1>
-                    </div>
                     <table>
+                        <tr>
+                            <td class="text-center" colspan="2">
+                                <h1 v-if="lang == 'srb'">Uloguj se</h1>
+                                <h1 v-if="lang == 'uk'">Log in</h1>
+                            </td>
+                        </tr>
                         <tr>
                             <td v-if="lang == 'srb'">Korisnicko ime: </td>
                             <td v-if="lang == 'uk'">Username: </td>
@@ -19,7 +21,7 @@
                             <td><input type="password" id="password-log"></td>
                         </tr>
                         <tr>
-                            <td colspan="2">
+                            <td colspan="2" class="tdbtn">
                                 <button @click="login()" v-if="lang == 'srb'">Uloguj se</button>
                                 <button @click="login()" v-if="lang == 'uk'">Log in</button>
                             </td>
@@ -31,11 +33,13 @@
                     </div>
                 </div>
                 <div class='col-sm-4 offset-sm-2'>
-                    <div>
-                        <h1 v-if="lang == 'srb'">Kreiraj nalog</h1>
-                        <h1 v-if="lang == 'uk'">Sign up</h1>
-                    </div>
                     <table>
+                        <tr>
+                            <td class="text-center" colspan="2">
+                                <h1 v-if="lang == 'srb'">Kreiraj nalog</h1>
+                                <h1 v-if="lang == 'uk'">Sign up</h1>
+                            </td>
+                        </tr>
                         <tr>
                             <td v-if="lang == 'srb'">Korisnicko ime: </td>
                             <td v-if="lang == 'uk'">Username: </td>
@@ -62,7 +66,7 @@
                             <td><input type="password" id="re-password"></td>
                         </tr>
                         <tr>
-                            <td colspan="2">
+                            <td colspan="2" class="tdbtn">
                                 <button @click="signup()" v-if="lang == 'srb'">Kreiraj nalog</button>
                                 <button @click="signup()" v-if="lang == 'uk'">Sign up</button>
                             </td>
@@ -88,7 +92,7 @@
                     <td>{{username}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2" id='tdbtn'>
+                    <td colspan="2" class='tdbtn'>
                         <button @click="logout()">Log out</button>
                     </td>
                 </tr>
@@ -103,8 +107,17 @@
     display: flex;
     text-align: left;
 }
-#tdbtn{
+
+td{
+    text-align: left;
+}
+
+.tdbtn{
     text-align: center;
+}
+
+.row-sized{
+    width: 100%;
 }
 
 </style>
