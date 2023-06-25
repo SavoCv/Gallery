@@ -5,11 +5,26 @@
         </div>
         <ul class="nav-pills navigation col-lg-5">
         <!-- <ul class="nav-pills navigation col-lg-5 col-sm-12"> -->
-            <li class="nav-item"><router-link to="/" class="nav-link">Home</router-link></li>
-            <li class="nav-item"><router-link to="/artworks" class="nav-link">Artworks</router-link></li>
-            <li class="nav-item"><router-link to="/artists" class="nav-link">Artists</router-link></li>
-            <li class="nav-item"><router-link to="/account" class="nav-link">My account</router-link></li>
-            <li class="nav-item"><router-link to="/about" class="nav-link">About us</router-link></li>
+            <li class="nav-item">
+                <router-link to="/" class="nav-link" v-if="lang == 'srb'">Početna</router-link>
+                <router-link to="/" class="nav-link" v-if="lang == 'uk'">Home</router-link>
+            </li>
+            <li class="nav-item">
+                <router-link to="/artworks" class="nav-link" v-if="lang == 'srb'">Umetnine</router-link>
+                <router-link to="/artworks" class="nav-link" v-if="lang == 'uk'">Artworks</router-link>
+            </li>
+            <li class="nav-item">
+                <router-link to="/artists" class="nav-link" v-if="lang == 'srb'">Umetnici</router-link>
+                <router-link to="/artists" class="nav-link" v-if="lang == 'uk'">Artists</router-link>
+            </li>
+            <li class="nav-item">
+                <router-link to="/account" class="nav-link" v-if="lang == 'srb'">Moj nalog</router-link>
+                <router-link to="/account" class="nav-link" v-if="lang == 'uk'">My account</router-link>
+            </li>
+            <li class="nav-item">
+                <router-link to="/about" class="nav-link" v-if="lang == 'srb'">O nama</router-link>
+                <router-link to="/about" class="nav-link" v-if="lang == 'uk'">About us</router-link>
+            </li>
         </ul>
         <div class="title col-lg-4 justify-content-center">
         <!-- <div class="title offset-lg-2 col-lg-2 col-sm-12 justify-content-center"> -->
@@ -17,7 +32,7 @@
         </div>
         <div class="nav-item offset-lg-1 col-lg-1 justify-content-end" id="flag_div">
         <!-- <div class="nav-item offset-lg-1 col-lg-1 col-sm-12 justify-content-end" id="flag_div"> -->
-            <button @load="set_flag()" @click="change_language()"> <!-- it's not working yet -->
+            <button @load="set_flag()" @click="change_language()">
                 <img src="@/assets/serbia_flag.png" id="flag">
             </button>
          </div>
@@ -38,13 +53,14 @@ nav{
     flex-wrap: wrap;
     background-color: rgb(0, 0, 0); 
     color: white;
+    margin-right: 0;
 }
 
 
 nav, ul{
     /* height: 80px; */
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    /* border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px; */
     display: flex;
     /*justify-content: space-between;*/
     align-items: center;
@@ -118,6 +134,11 @@ button{
 
 export default {
     name: 'Navigation',
+    data(){
+        return {
+            'lang': localStorage.getItem('language'),
+        }
+    },
     methods:{
         change_language(){
             let t = localStorage.getItem("language")

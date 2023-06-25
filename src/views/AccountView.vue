@@ -1,23 +1,27 @@
 <template>
     <div>
-        <div id="not-logged-in">
+        <div id="not-logged-in" v-if="username == ''">
             <div class='row'>
                 <div class='col-sm-4 offset-sm-1'>
                     <div>
-                        <h1>Log in</h1>
+                        <h1 v-if="lang == 'srb'">Uloguj se</h1>
+                        <h1 v-if="lang == 'uk'">Log in</h1>
                     </div>
                     <table>
                         <tr>
-                            <td>Username: </td>
+                            <td v-if="lang == 'srb'">Korisnicko ime: </td>
+                            <td v-if="lang == 'uk'">Username: </td>
                             <td><input type="text" id="username-log"></td>
                         </tr>
                         <tr>
-                            <td>Password: </td>
+                            <td v-if="lang == 'srb'">Sifra: </td>
+                            <td v-if="lang == 'uk'">Password: </td>
                             <td><input type="password" id="password-log"></td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <button @click="login()">Log in</button>
+                                <button @click="login()" v-if="lang == 'srb'">Uloguj se</button>
+                                <button @click="login()" v-if="lang == 'uk'">Log in</button>
                             </td>
                         </tr>
                     </table>
@@ -28,32 +32,39 @@
                 </div>
                 <div class='col-sm-4 offset-sm-2'>
                     <div>
-                        <h1>Sign up</h1>
+                        <h1 v-if="lang == 'srb'">Kreiraj nalog</h1>
+                        <h1 v-if="lang == 'uk'">Sign up</h1>
                     </div>
                     <table>
                         <tr>
-                            <td>Username: </td>
+                            <td v-if="lang == 'srb'">Korisnicko ime: </td>
+                            <td v-if="lang == 'uk'">Username: </td>
                             <td><input type="text" id="username-sign"></td>
                         </tr>
                         <tr>
-                            <td>First name: </td>
+                            <td v-if="lang == 'srb'">Ime: </td>
+                            <td v-if="lang == 'uk'">First name: </td>
                             <td><input type="text" id="fname"></td>
                         </tr>
                         <tr>
-                            <td>Last name: </td>
+                            <td v-if="lang == 'srb'">Prezime: </td>
+                            <td v-if="lang == 'uk'">Last name: </td>
                             <td><input type="text" id="lname"></td>
                         </tr>
                         <tr>
-                            <td>Password: </td>
+                            <td v-if="lang == 'srb'">Sifra: </td>
+                            <td v-if="lang == 'uk'">Password: </td>
                             <td><input type="password" id="password-sign"></td>
                         </tr>
                         <tr>
-                            <td>Repeat password: </td>
+                            <td v-if="lang == 'srb'">Ponovite sifru: </td>
+                            <td v-if="lang == 'uk'">Repeat password: </td>
                             <td><input type="password" id="re-password"></td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <button @click="signup()">Sign up</button>
+                                <button @click="signup()" v-if="lang == 'srb'">Kreiraj nalog</button>
+                                <button @click="signup()" v-if="lang == 'uk'">Sign up</button>
                             </td>
                         </tr>
                     </table>
@@ -62,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <div id='logged-in'>
+        <div id='logged-in' v-else>
             <table>
                 <tr>
                     <td>First name: </td>
@@ -95,6 +106,7 @@
 #tdbtn{
     text-align: center;
 }
+
 </style>
 
 <script>
@@ -102,29 +114,26 @@
 export default{
     name: "AccountView",
     data(){
+        let ret = {}
         if('username' in localStorage)
         {
             let username = localStorage.getItem('username');
             let users = JSON.parse(localStorage.getItem('users'));
-            return {
+            ret = {
                 'username': username,
                 'user': users[username]
             };
         }
-        return {
-            'username': '',
-            'user': {'pass': "", 'fname': "", 'lname': "" }
-        }
+        else
+            ret =  {
+                'username': '',
+                'user': {'pass': "", 'fname': "", 'lname': "" }
+            }
+        ret['lang'] = localStorage.getItem('language');
+        return ret;
     },
     mounted: function(){
-        if('username' in localStorage)
-        {
-            document.getElementById("not-logged-in").style.display = 'none';
-        }
-        else
-        {
-            document.getElementById("logged-in").style.display = 'none';
-        }
+        //as onload
     },
     methods: {
         login()
