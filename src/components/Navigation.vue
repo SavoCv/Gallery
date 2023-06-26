@@ -122,6 +122,7 @@ button{
     margin-right: 20px;
 }
 
+
 @media only screen and (max-width: 500px){
     ul {
         flex-direction: column;
