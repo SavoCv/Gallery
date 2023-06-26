@@ -53,11 +53,12 @@ footer{
   margin-top: auto;
 }
 
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
 </style>
 
 <script>
 import Navigation from '@/components/Navigation.vue'
-
 export default {
   name: 'App',
   data(){
