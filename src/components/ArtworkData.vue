@@ -101,7 +101,7 @@ img:hover{
         methods:{ 
             getImgUrl(pic) {
                 return require(`@/assets/imgs/${pic}`)
-            }
+            },
         },
         data(){
             return {
@@ -110,14 +110,14 @@ img:hover{
             }
         },
         mounted(){
-            let elems = document.getElementsByTagName("img")
-            for(let i = 0; i < elems.length; i++){
-                if(elems[i].height < elems[i].width){
-                    elems[i].style.height = "auto"
-                    elems[i].style.maxWidth = "120%"
-                    elems[i].style.maxHeight = "unset"
-                }
-            }
+            let elem = this.$el.querySelector("img")
+            
+            if(elem & elem.height < elem.width){
+                elem.style.height = "unset"
+                elem.style.maxWidth = "unset"
+                elem.style.width = "120%"
+                elem.style.maxHeight = "unset"
+            }   
         }
     }
        

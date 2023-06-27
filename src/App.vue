@@ -1,7 +1,7 @@
 <template>
   <div class='page_container'>
     <Navigation></Navigation>
-    <router-view/>
+    <router-view :key="$route.path"/>
     <footer v-if="lang == 'srb'">
       © 2023, Ilija Obradović i Savo Cvijetić, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu.
     </footer>

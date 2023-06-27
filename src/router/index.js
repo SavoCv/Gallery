@@ -31,12 +31,12 @@ const routes = [
     component: () => import(/*webpackChunkName: "Account" */ '../views/AccountView.vue')
   },
   {
-    path: '/artworks/painting',
+    path: '/artworks/paintings',
     name: 'paintings',
     component: () => import(/* webpackChunkName: "paintings" */ '../views/ArtworkView.vue')
   },
   {
-    path: '/artworks/sculpture',
+    path: '/artworks/sculptures',
     name: 'sculptures',
     component: () => import(/* webpackChunkName: "scluptures" */ '../views/ArtworkView.vue')
   }
