@@ -1,20 +1,10 @@
 <template>
-    <div class="row art-row" v-if="right">
-        <div :class="info_classes">
-            <ArtworkInfo :artwork_info="artwork_info"></ArtworkInfo>
+    <div class="row art-row">
+        <div :class="['order-sm-2', {'order-lg-2': right, 'order-lg-1': !right, 'col-lg-3': !ind},img_classes]">
+            <router-link :to="'/artworks/showArtwork/' + artwork_info.id"><img :src="getImgUrl(artwork_info.src)"></router-link>
         </div>
 
-        <div :class="img_classes">
-            <a href="#"><img class="img img-fluid" :src="getImgUrl(artwork_info.src)" ></a>
-        </div>
-    </div>
-    
-    <div class="row art-row" v-else>
-        <div :class="img_classes">
-            <a href="#"><img :src="getImgUrl(artwork_info.src)"></a>
-        </div>
-
-        <div :class="info_classes">
+        <div :class="['order-sm-1',{'order-lg-1': right, 'order-lg-2': !right, 'col-lg-9': !ind},info_classes]">
             <ArtworkInfo :artwork_info="artwork_info"></ArtworkInfo>         
         </div>
     </div>
@@ -93,7 +83,8 @@ img:hover{
         name: 'ArtworkData',
         props: [
             'artwork_info',
-            'right'
+            'right',
+            'ind',
         ],
         components: {
             ArtworkInfo
@@ -105,8 +96,8 @@ img:hover{
         },
         data(){
             return {
-                info_classes: "col-sm-9 info",
-                img_classes: "col-sm-3 pt-5 pb-5 art fancy-border hover-zoom"
+                info_classes: "col-sm-12  info",
+                img_classes: "col-sm-12 pt-5 pb-5 art fancy-border hover-zoom"
             }
         },
         mounted(){

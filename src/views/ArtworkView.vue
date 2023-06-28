@@ -1,8 +1,7 @@
 <template>
     <div class="container-fluid art-cont">
-      <artwork v-for="artwork_data, index in artworks_data" :artwork_info="artwork_data" :right="index%2" :key="artwork_data.id" @load="onLoaded"></artwork>
+      <artwork-data v-for="artwork_data, index in artworks_data" :artwork_info="artwork_data" :ind="false" :right="index%2" :key="artwork_data.id" ></artwork-data>
     </div>
-    <div @load="onLoaded()"></div>
 </template>
 
 <style scoped>
@@ -11,13 +10,13 @@
 
 <script>
 // @ is an alias to /src
-import Artwork from '@/components/ArtworkData.vue'
+import ArtworkData from '@/components/ArtworkData.vue'
 import artworks from '../data/art-data.js'
 
 export default {
   name: 'ArtworkView',
   components: {
-    Artwork,
+    ArtworkData,
   },
   data(){
     let lang = localStorage.getItem("language")
