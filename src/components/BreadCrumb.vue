@@ -17,6 +17,12 @@
     </div>
 </template>
 
+<style scoped>
+a {
+    color: gray;
+}
+</style>
+
 <script>
 import artworks from '@/data/art-data'
 

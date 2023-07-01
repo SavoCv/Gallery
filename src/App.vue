@@ -25,10 +25,10 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url("assets/imgs/wall.jpg");
+  background-image: url("assets/imgs/brick_wall.webp");
   background-size: 100% 100%;
-  background-attachment: fixed; */
-  background-color: white;
+  background-attachment: fixed;
+  /* background-color: white; */
   text-align: center;
   color: #000000;
   display: flex;
@@ -40,6 +40,12 @@
   min-height: 100vh;
   width: 100%;
 }
+
+input[type="text"], input[type="number"], input[type="password"], textarea{
+
+  border: 1px solid #000
+}
+
 
 footer{
   background-color: black;

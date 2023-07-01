@@ -3,7 +3,7 @@
         <artwork-data :artwork_info="artwork_data" :right="false" :ind="true" :key="artwork_data.id"></artwork-data>
         <div class="row x">
             <div class="col-sm-12 d-flex justify-content-center mb-5">
-                <table class="border">
+                <table class="table">
                     <!-- <tr>
                         <td colspan="2">
                             <h1 v-if="lang == 'srb'">Uloguj se</h1>
@@ -13,17 +13,17 @@
                     <tr>
                         <td v-if="lang == 'srb'">Ponuda: </td>
                         <td v-if="lang == 'uk'">Ponuda: </td>
-                        <td class="text-start"><input type="number" id="password-log" v-model="new_offer.offer"></td>
+                        <td class="text-start"><input type="number" class="form-control" id="password-log" v-model="new_offer.offer"></td>
                     </tr>
                     <tr>
                         <td v-if="lang == 'srb'">Komentar: </td>
                         <td v-if="lang == 'uk'">Comment: </td>
-                        <td><textarea rows="5" cols="50" v-model="new_offer.comment"></textarea></td>
+                        <td><textarea rows="5" cols="50" v-model="new_offer.comment" class="form-control" ></textarea></td>
                     </tr>
 
                     <tr>
                         <td colspan="2">
-                            <button @click="leaveOffer()" v-if="lang == 'srb'" class="btn btn-secondary ">Ostavi Ponudu</button>
+                            <button @click="leaveOffer()" v-if="lang == 'srb'" class="btn btn-secondary">Ostavi Ponudu</button>
                             <button @click="leaveOffer()" v-if="lang == 'uk'" class="btn btn-secondary ">Leave Offer</button>
                         </td>
                     </tr>
@@ -40,7 +40,7 @@
                 <strong v-if="lang == 'uk'">Offers and Comments</strong>
             </div>
             <div class="col-sm-12">
-                <table class="table table-striped table-hover table-bordered">
+                <table class="table  table-hover table-bordered tbl-com">
                     <tbody>
                         <tr>
                             <th>
@@ -91,6 +91,10 @@
 th, td {
   padding: 15px;
 }
+.tbl-input{
+    padding: 20px;
+}
+
 </style>
 <script>
 import artworks from '@/data/art-data'
