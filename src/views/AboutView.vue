@@ -11,6 +11,14 @@
 </template>
 
 
+<style scoped>
+
+.about{
+  padding-top: 20px;
+}
+
+</style>
+
 <script>
 
 export default {

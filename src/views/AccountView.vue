@@ -120,6 +120,10 @@ td{
     width: 100%;
 }
 
+#logged-in, #not-logged-in{
+    padding-top: 20px;
+}
+
 </style>
 
 <script>
