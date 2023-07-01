@@ -191,14 +191,16 @@ export default {
             this.$router.go(this.$route)
         }
     },
-    mounted(){
-            //var $ = require('jquery')
-
-            if(!localStorage.getItem("language"))
+    created(){
+        if(!localStorage.getItem("language"))
                 localStorage.setItem("language", "srb")
+        this.lang = localStorage.getItem('language')
+    },
+    mounted(){
+            //var $ = require('jquery'
 
             let t = localStorage.getItem("language")
-            console.log(t)
+            // console.log(t)
             if(t === "srb")
                 this.$el.querySelector("#flag").setAttribute("src", require('@/assets/serbia_flag.png'))
             else

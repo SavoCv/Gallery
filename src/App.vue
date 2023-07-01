@@ -25,9 +25,10 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("assets/imgs/wall.jpg");
+  /* background-image: url("assets/imgs/wall.jpg");
   background-size: 100% 100%;
-  background-attachment: fixed;
+  background-attachment: fixed; */
+  background-color: white;
   text-align: center;
   color: #000000;
   display: flex;
@@ -70,7 +71,7 @@ export default {
   },
   components: {
     Navigation,
-    BreadCrumb
+    BreadCrumb,
   }
 }
 </script>

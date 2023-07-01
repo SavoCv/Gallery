@@ -19,28 +19,26 @@ export default {
     ArtworkData,
   },
   data(){
-    let lang = localStorage.getItem("language")
-    if(!lang) lang = "srb";
-    
-    let ad = null;
-
-    if(lang === "srb"){  
-      ad = artworks.map(a => {
-            return  {...a.srb, src: a.src, id: a.id, type: a.type}
-      })  
-    }
-    else{
-      ad = artworks.map(a => {
-            return  {...a.eng, src: a.src, id: a.id, type: a.type}
-      })
-    }
-
     return {
-      artworks_data: ad,
+      artworks_data: [],
+
     }
   },
   mounted(){
-    let p = this.$route.path.split('/').splice(-1);
+
+    let lang = localStorage.getItem("language")
+    if(!lang) lang = "srb";
+
+      
+    this.artworks_data = artworks.map(a => {
+          return  {...a[lang], src: a.src, id: a.id, type: a.type, estOld: a.estOld, estPrice: a.estPrice}
+    })  
+    
+
+    // alert("joooj")
+    let p = this.$route.path.split('/').slice(-1);
+    // console.log(p)
+
 
     if(!(p[0] === "artworks"))
       this.artworks_data = this.artworks_data.filter(a => {
