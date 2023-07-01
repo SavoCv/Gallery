@@ -1,7 +1,8 @@
 <template>
   <div class='page_container'>
     <Navigation></Navigation>
-    <router-view/>
+    <bread-crumb></bread-crumb>
+    <router-view :key="$route.path"/>
     <footer v-if="lang == 'srb'">
       © 2023, Ilija Obradović i Savo Cvijetić, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu.
     </footer>
@@ -53,11 +54,13 @@ footer{
   margin-top: auto;
 }
 
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
 </style>
 
 <script>
 import Navigation from '@/components/Navigation.vue'
-
+import BreadCrumb from './components/BreadCrumb.vue'
 export default {
   name: 'App',
   data(){
@@ -66,7 +69,8 @@ export default {
     }
   },
   components: {
-    Navigation
+    Navigation,
+    BreadCrumb
   }
 }
 </script>
