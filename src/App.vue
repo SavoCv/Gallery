@@ -71,6 +71,12 @@ export default {
   components: {
     Navigation,
     BreadCrumb
+  },
+  mounted() {
+    if(localStorage.getItem("language") == null)
+    {
+      localStorage.setItem("language", 'srb');
+    }
   }
 }
 </script>
