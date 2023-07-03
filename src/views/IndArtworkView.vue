@@ -12,7 +12,7 @@
                     </tr> -->
                     <tr>
                         <td v-if="lang == 'srb'">Ponuda: </td>
-                        <td v-if="lang == 'uk'">Ponuda: </td>
+                        <td v-if="lang == 'uk'">Offer: </td>
                         <td class="text-start"><input type="number" class="form-control" id="password-log" v-model="new_offer.offer"></td>
                     </tr>
                     <tr>

@@ -1,12 +1,7 @@
- - BreadCrumbs
- - Homepage
  - umetnine 
-    - procenjena vrednost i starost, video galerija i galerija slika
-    - ostavljanje ponude i komentara
-    - sort i pretraga
+    - video galerija i galerija slika
  - Moj nalog
     - pregled ponuda i poruka koje je korisnik dodao
     - brisanje ponuda i poruka
- - o nama
  - baneri?
  - stilizovanje 
