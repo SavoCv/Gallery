@@ -1,12 +1,13 @@
 <template>
     <div class="row art-row">
-        <div :class="['order-sm-2', {'order-lg-2': right, 'order-lg-1': !right, 'col-lg-3': !ind},img_classes]">
+        <div :class="['order-sm-2', {'order-lg-2': right, 'order-lg-1': !right, 'col-lg-3': !ind, 'imgc': !ind},img_classes]">
             <router-link :to="'/artworks/showArtwork/' + artwork_info.id"><img :src="getImgUrl(artwork_info.src)"></router-link>
         </div>
 
         <div :class="['order-sm-1',{'order-lg-1': right, 'order-lg-2': !right, 'col-lg-9': !ind},info_classes]">
             <ArtworkInfo :artwork_info="artwork_info"></ArtworkInfo>         
         </div>
+
     </div>
     
 </template>
@@ -45,7 +46,6 @@ img{
     text-justify: inter-word;
     justify-content: center;
     flex-direction: column;
-    padding: 7%;
 }
 
 h2{
@@ -67,11 +67,11 @@ img, span{
     justify-self: center;
 }
 
-img{
+.imgc{
     transition: transform .2s;
 }
 
-img:hover{
+.imgc:hover{
      transform: scale(1.1);
 }
 </style>

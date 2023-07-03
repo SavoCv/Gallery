@@ -17,7 +17,16 @@
     </div>
 </template>
 
+<style scoped>
+a {
+    color: gray;
+}
+</style>
+
 <script>
+import artworks from '@/data/art-data'
+
+
 export default {
     name: 'BreadCrumb',
     data(){
@@ -25,25 +34,33 @@ export default {
             breadcrumbList: []
         }
     },
-    mounted(){ this.updateList() },
+    // mounted(){ this.updateList() },
     watch: { '$route' () { this.updateList() }},
     methods:{
         updateList() { 
             
             if(localStorage.getItem('language') === "uk"){
 
-                this.breadcrumbList =this.$route.meta.breadcrumb_eng
+                this.breadcrumbList = JSON.parse(JSON.stringify(this.$route.meta.breadcrumb_eng))
                 
             }
             else{
-                console.log(this.$route.meta.breadcrumb_srb)
+                // console.log(this.$route.meta.breadcrumb_srb)
                 this.breadcrumbList = JSON.parse(JSON.stringify(this.$route.meta.breadcrumb_srb))
-            
+                // console.log(this.breadcrumbList)
             }
             
             let n = this.breadcrumbList.length-1
-            if(this.breadcrumbList[n].name === "generic")
-                this.breadcrumbList[n].name = this.$route.path.split("/").slice(-1)[0]
+            if(this.breadcrumbList[n].name === "generic"){
+                let x = this.$route.path.split("/").slice(-2)
+            
+                if(x[0] === "showArtwork"){
+                    this.breadcrumbList[n].name = artworks.find(a => a.id == Number(x[1]))[localStorage.getItem('language')].name;
+                }
+                else{
+                    this.breadcrumbList[n].name = x[1];
+                }
+            }
         }
     }
 }

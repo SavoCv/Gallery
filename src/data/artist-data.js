@@ -14,8 +14,8 @@ const artists = [
         src: "artist2.jpg"
     },
     {
-        name: "Leonardo da Vinci",
-        name_srb: "Leonardo da Vinči",
+        name: "Leonardo Da Vinci",
+        name_srb: "Leonardo Da Vinči",
         info: "Leonardo di ser Piero da Vinci (15 April 1452 – 2 May 1519) was an Italian polymath of the High Renaissance who was active as a painter, draughtsman, engineer, scientist, theorist, sculptor, and architect. While his fame initially rested on his achievements as a painter, he also became known for his notebooks, in which he made drawings and notes on a variety of subjects, including anatomy, astronomy, botany, cartography, painting, and paleontology. Leonardo is widely regarded to have been a genius who epitomized the Renaissance humanist ideal, and his collective works comprise a contribution to later generations of artists matched only by that of his younger contemporary, Michelangelo.",
         info_srb: "Leonardo di ser Pjero da Vinči (15. april 1452 — 2. maj 1519) je bio italijanski polimatičar visoke renesanse koji je bio aktivan kao slikar, crtač, inženjer, naučnik, teoretičar, vajar i arhitekta. Dok je njegova slava u početku počivala na njegovim dostignućima kao slikaru, postao je poznat i po svojim sveskama, u kojima je pravio crteže i beleške o raznim temama, uključujući anatomiju, astronomiju, botaniku, kartografiju, slikarstvo i paleontologiju. Smatra se da je Leonardo bio genije koji je oličenje renesansnog humanističkog ideala, a njegova kolektivna dela predstavljaju doprinos kasnijim generacijama umetnika koji se može meriti samo sa doprinosom njegovog mlađeg savremenika, Mikelanđela.",
         src: "artist3.jpg"
