@@ -5,8 +5,8 @@
         <span v-if="lang == 'uk'">{{ artist.info }}</span>
         <span v-if="lang == 'srb'">{{ artist.info_srb }}</span>
         <br>
-        <button @click="overviewArts" v-if="lang == 'uk'">Overview of artworks</button>
-        <button @click="overviewArtsSrb" v-if="lang == 'srb'">Pregled dela</button>
+        <button @click="overviewArts" v-if="lang == 'uk'" class="btn btn-secondary">Overview of artworks</button>
+        <button @click="overviewArtsSrb" v-if="lang == 'srb'" class="btn btn-secondary">Pregled dela</button>
     </div>
 </template>
 

@@ -57,6 +57,9 @@
 .heading{
   font-weight: bold;
 }
+th, td {
+  padding: 15px;
+}
 </style>
 
 <script>

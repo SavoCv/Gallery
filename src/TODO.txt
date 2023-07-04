@@ -1,7 +1,4 @@
  - umetnine 
     - video galerija i galerija slika
- - Moj nalog
-    - pregled ponuda i poruka koje je korisnik dodao
-    - brisanje ponuda i poruka
  - baneri?
  - stilizovanje 

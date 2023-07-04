@@ -72,6 +72,11 @@
                                 {{offer.comment}}
                             </td>
 
+                            <td v-if="offer.username == username">
+                                <button class="btn btn-secondary" @click="removeOffer(offer)" v-if="lang == 'uk'">Remove</button>
+                                <button class="btn btn-secondary" @click="removeOffer(offer)" v-if="lang == 'srb'">Ukloni</button>
+                            </td>
+
                         </tr>
                         </template>
                     </tbody>
@@ -117,7 +122,8 @@ export default {
             tmp_offers: [],
             offers: [],
             error: "",
-            lang: ""
+            lang: "",
+            username: localStorage.getItem('username'),
         }
     },
     mounted(){
@@ -143,7 +149,22 @@ export default {
                 this.offers.push({...this.new_offer})
                 localStorage.setItem("offers", JSON.stringify(this.offers))
             }
-        }
+        },
+        removeOffer(offer){
+            let oac = JSON.parse(localStorage.getItem("offers"));
+            let flag = false;
+            oac = oac.filter(a=> {
+                if(!flag && JSON.stringify(a) == JSON.stringify(offer))
+                {
+                    flag = true;
+                    return false;
+                }
+                else
+                    return true;
+            });
+            localStorage.setItem("offers", JSON.stringify(oac));
+            location.reload();
+        },
     }
 }
 </script>
