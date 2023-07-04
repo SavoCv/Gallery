@@ -1,7 +1,7 @@
 <template>
   <div class="home container">
     <class class="row">
-      <div class="col-sm">
+      <div class="col-sm-12">
         <h1 class='heading' v-if="lang == 'srb'">Poslednje tri ponude</h1>
         <h1 class='heading' v-if="lang == 'uk'">Last 3 offers</h1>
         <table class="table  table-hover table-bordered tbl-com">
@@ -71,7 +71,7 @@
 }
 th, td {
   padding: 15px;
-  max-width: fit-content;
+  /* max-width: fit-content; */
   /* display: inline-block; */
 }
 
@@ -80,7 +80,7 @@ th, td {
 }
 
 table{
-  max-width: fit-content;
+  max-width: 50%;
   display: inline-block;
 }
 </style>

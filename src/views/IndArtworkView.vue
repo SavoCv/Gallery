@@ -123,9 +123,9 @@ th, td {
     padding: 20px;
 }
 
-#artwork-container{
+/* #artwork-container{
     max-height: 1200px;
-}
+} */
 
 img{
     width: 80%;
@@ -203,7 +203,17 @@ export default {
             let oac = JSON.parse(localStorage.getItem("offers"));
             let flag = false;
             oac = oac.filter(a=> {
-                if(!flag && JSON.stringify(a) == JSON.stringify(offer))
+                if(!flag && JSON.stringify(a) === JSON.stringify(offer))
+                {
+                    flag = true;
+                    return false;
+                }
+                else
+                    return true;
+            });
+            flag=false;
+            this.tmp_offers = this.tmp_offers.filter(a=> {
+                if(!flag && JSON.stringify(a) === JSON.stringify(offer))
                 {
                     flag = true;
                     return false;
@@ -212,7 +222,7 @@ export default {
                     return true;
             });
             localStorage.setItem("offers", JSON.stringify(oac));
-            location.reload();
+            // location.reload();
         },
         makeForGallery(){
             let ret = [];

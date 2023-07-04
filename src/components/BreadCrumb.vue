@@ -61,6 +61,8 @@ export default {
                     this.breadcrumbList[n].name = x[1];
                 }
             }
+
+            document.title=this.breadcrumbList[n].name;
         }
     }
 }

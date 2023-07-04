@@ -40,7 +40,8 @@ const bcList = [
   {key: 'account', name_srb: "Moj nalog", name_eng: "My account", link: "/account", parent: "home"},
   {key: 'paintings', name_srb: "Slike", name_eng: "Paintings", link: "/artworks/paintings", parent: "artworks"},
   {key: 'sculptures', name_srb: "Skulpture", name_eng: "Sculptures", link: "/artworks/sculptures", parent: "artworks"},
-  {key: 'showArtwork', name_srb: "generic", name_eng: "generic", link: "/artworks", parent: "artworks"}
+  {key: 'showArtwork', name_srb: "generic", name_eng: "generic", link: "/artworks", parent: "artworks"},
+  {key: 'others', name_srb: "Ostale", name_eng: "Others", link: "/artworks/others", parent: "artworks"}
 ]
 
 const bcMap = new Map();
@@ -123,13 +124,22 @@ var routes = [
     }
   },
   {
+    path: '/artworks/others',
+    name: 'others',
+    component: () => import(/* webpackChunkName: "scluptures" */ '../views/ArtworkView.vue'),
+    meta: {
+      ...bcMap.get('others')
+    }
+  },
+  {
     path: '/artworks/showArtwork/:id',
     name: 'showArtwork',
     component: () => import(/* webpackChunkName: "showArtwork" */ '../views/IndArtworkView.vue'),
     meta: {
       ...bcMap.get('showArtwork')
     }
-  }
+  },
+  
 ]
 
 const router = createRouter({

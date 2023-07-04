@@ -317,8 +317,10 @@ export default{
         removeOffer(offer){
             let oac = JSON.parse(localStorage.getItem("offers"));
             let flag = false;
+            
+            
             oac = oac.filter(a=> {
-                if(!flag && JSON.stringify(a) == JSON.stringify(offer))
+                if(!flag && JSON.stringify(a) === JSON.stringify({username: offer.username, comment: offer.comment, for: offer.for, offer: offer.offer}))
                 {
                     flag = true;
                     return false;
@@ -326,8 +328,20 @@ export default{
                 else
                     return true;
             });
+
+            flag = false;
+            this.offers = this.offers.filter(a=> {
+                if(!flag && JSON.stringify(a) === JSON.stringify(offer))
+                {
+                    flag = true;
+                    return false;
+                }
+                else
+                    return true;
+            });
+
             localStorage.setItem("offers", JSON.stringify(oac));
-            location.reload();
+            // location.reload();
         },
     }
 }

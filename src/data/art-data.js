@@ -134,6 +134,44 @@ const artworks = [
         src: "img7.jpg",
         other_photos: [],
         videos: [],
-    }
+    },
+    {
+        id: 8,
+        uk:{
+            name: "American",
+            info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            author: "Victor Spinski",
+        },
+        srb:{
+            name: "Američki",
+            info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            author: "Viktor Spinski",
+        },
+        estOld: {year: 5, months: 10, days: 53},
+        estPrice: 91000,
+        type: "others",
+        src: "img8.jpg",
+        other_photos: [],
+        videos: [],
+    },
+    {
+        id: 9,
+        uk:{
+            name: "Untitled",
+            info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            author: "Donald Judd",
+        },
+        srb:{
+            name: "Nema ime",
+            info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            author: "Donald Džad",
+        },
+        estOld: {year: 100, months: 10, days: 53},
+        estPrice: 91000,
+        type: "others",
+        src: "img9.webp",
+        other_photos: [],
+        videos: [],
+    },
 ];
 export default artworks;

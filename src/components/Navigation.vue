@@ -33,6 +33,12 @@
                             <span v-if="lang == 'uk'">Sculptures</span>
                         </router-link>
                     </li>
+                    <li>
+                        <router-link to="/artworks/others" class="dropdown-item">
+                            <span v-if="lang == 'srb'">Ostale</span>
+                            <span v-if="lang == 'uk'">Others</span>
+                        </router-link>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item">
