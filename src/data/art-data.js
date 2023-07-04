@@ -16,7 +16,8 @@ const artworks = [
         estPrice: 100000,
         type: "paintings",
         src: "img1.jpg",
-        
+        other_photos: [],
+        videos: [],
     },
     {
         id: 2,
@@ -35,6 +36,8 @@ const artworks = [
         estPrice: 1000,
         type: "paintings",
         src: "img2.jpg",
+        other_photos: [],
+        videos: [],
     },
     {   
         id: 3,
@@ -52,7 +55,9 @@ const artworks = [
         },
         estOld: {year: 200, months: 8, days: 53},
         type: "paintings",
-        src: "img3.jpg"
+        src: "img3.jpg",
+        other_photos: [],
+        videos: [],
     },
     {
         id: 4,
@@ -70,6 +75,8 @@ const artworks = [
         estPrice: 1000,
         type: "paintings",
         src: "img4.jpg",
+        other_photos: [],
+        videos: [],
     },
     {
         id: 5,
@@ -87,6 +94,8 @@ const artworks = [
         estPrice: 120000,
         type: "sculptures",
         src: "img5.jpg",
+        other_photos: [],
+        videos: [],
     },
     {
         id: 6,
@@ -104,6 +113,8 @@ const artworks = [
         estPrice: 1000,
         type: "sculptures",
         src: "img6.png",
+        other_photos: ["lookII.jpg", "lookII2.jpg"],
+        videos: ["LOOK_II.mp4"],
     },
     {
         id: 7,
@@ -121,6 +132,8 @@ const artworks = [
         estPrice: 91000,
         type: "sculptures",
         src: "img7.jpg",
+        other_photos: [],
+        videos: [],
     }
 ];
 export default artworks;

@@ -1,6 +1,27 @@
 <template>
     <div class="container-fluid art-cont" v-if="artwork_data">
-        <div id="artwork-container">
+        <div id="artwork-container" class="container">
+            <div class="row">
+                <div class="col-sm-2 d-flex">
+                    <button @click='previous' class='lr-btn btn btn-secondary' >&lt;</button>
+                </div>
+                <div class="col-sm-8">
+                    <img :src="require(`@/assets/imgs/${for_gallery[currInd].src}`)" v-if="for_gallery[currInd].type == 'p'">
+                    <video v-if="for_gallery[currInd].type == 'v'" controls>
+                        <source :src="require(`@/assets/videos/${for_gallery[currInd].src}`)" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-sm d-flex">
+                    <button @click="next" class='lr-btn btn btn-secondary'>&gt;</button>
+                </div>
+            </div>
+            
+            
+            <!-- <img :src="require(`@/assets/imgs/${artwork_data.src}`)">
+            <img :src="require(`@/assets/imgs/${p}`)" v-for="p in artwork_data.other_photos" :key="p">
+            <video v-for="v in artwork_data.videos" :key='v' controls>
+                <source :src="require(`@/assets/videos/${v}`)" type="video/mp4">
+            </video> -->
             <artwork-data :artwork_info="artwork_data" :right="false" :ind="true" :key="artwork_data.id"></artwork-data>
         </div>
         <div class="row x">
@@ -106,6 +127,21 @@ th, td {
     max-height: 1200px;
 }
 
+img{
+    width: 80%;
+    padding: 20px;
+}
+
+video{
+    width: 80%;
+    padding: 20px;  
+}
+
+.lr-btn{
+    margin-top: auto; 
+    margin-bottom: auto;
+}
+
 </style>
 <script>
 import artworks from '@/data/art-data'
@@ -130,6 +166,7 @@ export default {
             error: "",
             lang: "",
             username: localStorage.getItem('username'),
+            currInd: 0,
         }
     },
     mounted(){
@@ -140,7 +177,13 @@ export default {
 
         this.offers = JSON.parse(localStorage.getItem("offers") || "[]")
         this.tmp_offers = this.offers.filter(o => o.for == tmpId)
-        this.artwork_data = {...tmp[localStorage.getItem("language")], src: tmp.src, id: tmp.id, estPrice: tmp.estPrice, estOld: tmp.estOld}
+        this.artwork_data = {...tmp[localStorage.getItem("language")], src: tmp.src, id: tmp.id, estPrice: tmp.estPrice, estOld: tmp.estOld, other_photos: tmp.other_photos, videos: tmp.videos}
+        this.makeForGallery();
+    },
+    watch: {
+      currentPV() {
+        this.currPV = this.for_gallery[this.currInd];
+      }
     },
     methods: {
         leaveOffer(){
@@ -170,6 +213,38 @@ export default {
             });
             localStorage.setItem("offers", JSON.stringify(oac));
             location.reload();
+        },
+        makeForGallery(){
+            let ret = [];
+            ret.push({
+                src: this.artwork_data.src,
+                type: 'p',
+            })
+            for(let i = 0; i < this.artwork_data.other_photos.length; ++i)
+            {
+                ret.push({
+                    src: this.artwork_data.other_photos[i],
+                    type: 'p',
+                });
+            }
+            for(let i = 0; i < this.artwork_data.videos.length; ++i)
+            {
+                ret.push({
+                    src: this.artwork_data.videos[i],
+                    type: 'v',
+                })
+            }
+            this.for_gallery = ret;
+            this.currInd = 0;
+            this.currPV = ret[0];
+        },
+        next(){
+            this.currInd = (this.currInd + 1)%this.for_gallery.length;
+            this.currPV = this.for_gallery[this.currInd];
+        },
+        previous(){
+            this.currInd = (this.currInd - 1 + this.for_gallery.length)%this.for_gallery.length;
+            this.currPV = this.for_gallery[this.currInd];
         },
     }
 }

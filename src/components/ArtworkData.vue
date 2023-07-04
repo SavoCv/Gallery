@@ -1,6 +1,6 @@
 <template>
     <div class="row art-row">
-        <div :class="['order-sm-2', {'order-lg-2': right, 'order-lg-1': !right, 'col-lg-3': !ind, 'imgc': !ind},img_classes]">
+        <div :class="['order-sm-2', {'order-lg-2': right, 'order-lg-1': !right, 'col-lg-3': !ind, 'imgc': !ind, 'hidden': ind},img_classes]">
             <router-link :to="'/artworks/showArtwork/' + artwork_info.id"><img :src="getImgUrl(artwork_info.src)"></router-link>
         </div>
 
@@ -74,6 +74,10 @@ img, span{
 
 .imgc:hover{
      transform: scale(1.1);
+}
+
+.hidden{
+    display: none;
 }
 </style>
 
