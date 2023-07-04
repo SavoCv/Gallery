@@ -1,6 +1,8 @@
 <template>
     <div class="container-fluid art-cont" v-if="artwork_data">
-        <artwork-data :artwork_info="artwork_data" :right="false" :ind="true" :key="artwork_data.id"></artwork-data>
+        <div id="artwork-container">
+            <artwork-data :artwork_info="artwork_data" :right="false" :ind="true" :key="artwork_data.id"></artwork-data>
+        </div>
         <div class="row x">
             <div class="col-sm-12 d-flex justify-content-center mb-5">
                 <table class="table">
@@ -98,6 +100,10 @@ th, td {
 }
 .tbl-input{
     padding: 20px;
+}
+
+#artwork-container{
+    max-height: 1200px;
 }
 
 </style>

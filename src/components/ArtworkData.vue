@@ -16,6 +16,7 @@
 img{
     height: auto;
     max-height: 80%;
+    max-height: 1000px;
     max-width: 80%; 
     box-shadow: 3px 3px 5px;
 }

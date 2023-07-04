@@ -110,8 +110,8 @@
                     <tbody>
                         <tr>
                             <th>
-                                <strong v-if="lang == 'srb'">Korisničko ime</strong>
-                                <strong v-if="lang == 'uk'">Username</strong>
+                                <strong v-if="lang == 'srb'">Delo</strong>
+                                <strong v-if="lang == 'uk'">Artwork</strong>
                             </th>
                             <th>
                                 <strong v-if="lang == 'srb'">Ponuda</strong>
@@ -127,7 +127,9 @@
                         <tr>
 
                             <td>
-                                {{offer.username}}
+                                <router-link :to="'/artworks/showArtwork/' + offer.for">
+                                    {{offer.name}}
+                                </router-link>
                             </td>
 
                             <td>
@@ -138,7 +140,7 @@
                                 {{offer.comment}}
                             </td>
 
-                            <td v-if="offer.username == username">
+                            <td v-if="offer.username == username" style="text-align: center;">
                                 <button class="btn btn-secondary" @click="removeOffer(offer)" v-if="lang == 'uk'">Remove</button>
                                 <button class="btn btn-secondary" @click="removeOffer(offer)" v-if="lang == 'srb'">Ukloni</button>
                             </td>
@@ -190,6 +192,7 @@ th, td {
 </style>
 
 <script>
+import artworks from '../data/art-data.js'
 
 export default{
     name: "AccountView",
@@ -209,7 +212,7 @@ export default{
                 'username': '',
                 'user': {'pass': "", 'fname': "", 'lname': "" }
             }
-        ret['lang'] = localStorage.getItem('language');
+        this.lang = localStorage.getItem('language');
         ret['offers'] = this.getMyOffersAndComments();
         ret['login_message0'] = '';
         ret['login_message1'] = '';
@@ -297,6 +300,18 @@ export default{
             oac = oac.filter(a => {
                 return a.username == username;
             });
+            for(let i = 0; i < oac.length; ++i)
+            {
+                if(this.lang == 'uk'){
+                    oac[i]['name'] = artworks.find(a=>{
+                        return a.id == oac[i].for;
+                    }).uk.name;
+                }
+                if(this.lang == 'srb')
+                    oac[i]['name'] = artworks.find(a=>{
+                        return a.id == oac[i].for;
+                    }).srb.name;
+            }
             return oac;
         },
         removeOffer(offer){
