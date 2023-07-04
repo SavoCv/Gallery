@@ -50,8 +50,10 @@ export default {
         },
         overviewArts(){
             let arts = artworks.map(a => {
-                return  {...a.eng, src: a.src};
+                return  {...a.uk, src: a.src};
             });
+            console.log(JSON.stringify(arts));
+            console.log(this.artist.name);
             arts = arts.filter(a => {
                 return a.author == this.artist.name;
             })

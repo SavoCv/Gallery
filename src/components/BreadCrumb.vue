@@ -40,12 +40,12 @@ export default {
         updateList() { 
             
             if(localStorage.getItem('language') === "uk"){
-
+                console.log(this.$route.meta.breadcrumb_eng)
                 this.breadcrumbList = JSON.parse(JSON.stringify(this.$route.meta.breadcrumb_eng))
                 
             }
             else{
-                // console.log(this.$route.meta.breadcrumb_srb)
+                console.log(this.$route.meta.breadcrumb_srb)
                 this.breadcrumbList = JSON.parse(JSON.stringify(this.$route.meta.breadcrumb_srb))
                 // console.log(this.breadcrumbList)
             }

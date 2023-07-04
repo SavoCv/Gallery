@@ -49,7 +49,7 @@ bcMap.set(bcList[0].key, {
   breadcrumb_srb: [ 
     {name: bcList[0].name_srb, link: ""}],
   breadcrumb_eng: [
-    {name: bcList[0].name_srb, link: ""}],
+    {name: bcList[0].name_eng, link: ""}],
   linkReal: bcList[0].link
 })
 

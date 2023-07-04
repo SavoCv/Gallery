@@ -61,7 +61,7 @@
         </div>
         <div class="nav-item offset-lg-1 col-lg-1 justify-content-end" id="flag_div">
         <!-- <div class="nav-item offset-lg-1 col-lg-1 col-sm-12 justify-content-end" id="flag_div"> -->
-            <button @click="change_language()">
+            <button @click="change_language()" id="ch_btn">
                 <img src="@/assets/serbia_flag.png" id="flag">
             </button>
          </div>
@@ -72,7 +72,7 @@
 <style scoped>
 
 nav a.router-link-exact-active {
-  color: var(--light-green);
+  color: rgb(170, 170, 170);
   font-weight: bold;
 }
 
@@ -101,7 +101,7 @@ ul{
 }
 
 li:hover{
-    background-color: var(--lightest-green) !important;
+    background-color: grey !important;
     border-radius: 10px;
     color: white;
     font-weight: bold;
@@ -144,7 +144,7 @@ div, nav{
     padding: 10px;
 }
 
-button{
+#ch_btn{
     border: none;
     padding: 0;
     background: transparent;
@@ -156,14 +156,14 @@ button{
     display: none;
 }
 
-.r-link{
-    margin-right: 20px;
-}
-
 @media only screen and (max-width: 500px){
     ul {
         flex-direction: column;
     }
+}
+
+li{
+    padding: 10px;
 }
 
 </style>
