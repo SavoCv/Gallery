@@ -2,7 +2,7 @@
   <div class="about">
     <h1 v-if="lang == 'uk'">About Gallery</h1>
     <h1 v-if="lang == 'srb'">O Gallery</h1>
-    <p v-if="lang == 'uk'">Gallery is product of project task for Web Design subject. This site didn't get any awards, and most likely won't. This site is different from others because we didn't looked up to any other site.</p>
+    <p v-if="lang == 'uk'">Gallery is product of project task for Web Design subject. This site didn't get any awards, and most likely won't. This site is different from others because we didn't look up to any other site.</p>
     <p v-if="lang == 'srb'">Galerija je proizvod projektnog zadatka za predmet Veb dizajn. Ovaj sajt nije dobio nijednu nagradu, a verovatno i neće. Ovaj sajt se razlikuje od drugih jer se nismo ugledali ni na jedan drugi sajt.</p>
     <p v-if="lang == 'uk'">Contact number: 061 234 57 89</p>
     <p v-if="lang == 'srb'">Kontakt telefon: 061 234 57 89</p>

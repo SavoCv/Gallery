@@ -7,7 +7,7 @@
       © 2023, Ilija Obradović i Savo Cvijetić, Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu.
     </footer>
     <footer v-if="lang == 'uk'">
-      © 2023, Ilija Obradović and Savo Cvijetić, University of Belgrade, School of Electrical Engineering, Software Enginerring Department.
+      © 2023, Ilija Obradović and Savo Cvijetić, University of Belgrade, School of Electrical Engineering, Software Engineering Department.
     </footer>
   </div>
 </template>
